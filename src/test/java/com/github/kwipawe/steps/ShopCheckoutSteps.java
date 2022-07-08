@@ -6,13 +6,26 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.commons.io.FileUtils;
 
+
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class ShopCheckoutSteps {
+    private static String addressID;
     private WebDriver driver;
+
+
+    public String accessAddressId() {
+        return this.addressID;
+    }
+
 
     @Given("I am on shop main page")
     public void iAmOnShopMainPage() {
@@ -38,6 +51,7 @@ public class ShopCheckoutSteps {
     @And("I go back to main page")
     public void iGoBackToMainPage() {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
+        this.addressID = myAccountPage.getAddressId();
         myAccountPage.goToMainPageWithObject();
     }
 
@@ -79,5 +93,37 @@ public class ShopCheckoutSteps {
         float discountedPriceOnPage = mainPage.getDiscountedPriceOnPage();
         float calculatedDiscountedPrice = mainPage.calculateDiscountedPrice();
         Assert.assertEquals(discountedPriceOnPage, calculatedDiscountedPrice, 0.001);
+    }
+
+    @And("I select proper address")
+    public void iSelectProperAddress() {
+        OrderPage orderPage = new OrderPage(driver);
+        orderPage.selectAddress();
+    }
+
+    @And("I select pick up in-store delivery option")
+    public void iSelectDeliveryOption() {
+        OrderPage orderPage = new OrderPage(driver);
+        orderPage.chooseShippingMethod();
+    }
+
+    @And("I choose payment option and finalize the order")
+    public void iChoosePaymentOptionAndFinalizeTheOrder() {
+        OrderPage orderPage = new OrderPage(driver);
+        orderPage.choosePaymentAndOrder();
+    }
+
+    @Then("I capture a screenshot")
+    public void iCaptureAScreenshot() {
+        String path = System.getProperty("user.dir")+"\\screenshots\\CheckoutScreenShot"+System.currentTimeMillis()+".png";
+        //Take the screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        //Copy the file to a location and use try catch block to handle exception
+        try {
+            FileUtils.copyFile(screenshot, new File(path));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -13,3 +13,7 @@ Feature: Buying a product
     And I choose  quantity "5"
     And I add product to shopping cart and proceed
     And I go to checkout page
+    And I select proper address
+    And I select pick up in-store delivery option
+    And I choose payment option and finalize the order
+    Then I capture a screenshot

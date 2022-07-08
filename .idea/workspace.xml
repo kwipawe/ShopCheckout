@@ -8,24 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e065f6a-08c1-44bf-8b67-4ff87afe5f10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cucumber/Features/ShopCheckout.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/MyAccountPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/ShoppingCartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/SignInPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/checkoutSS.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bfcdb27e6aed30eaa5eced135ba58702150fb64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fb6cbc8474296cf36414096ceb8a2f79a143665" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/599830bc6627207a5a2a34a18e436e8a594ebd23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9963b8fd0adabefc32b1e35c1b36747b2d6a5c64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a22a4cf42acecfdc89a37293dd6424dd491e3f00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/2/b264a3f7c91e93eac453d5aadaaf8a6007d4dbf2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de4c9a10e5a0ec38dd6df9e520c037a70aa89399" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3d3640073477310785c0c75e7dbd0560487a04d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/faf584f8a461c2a0009bebc575addbdefcd03d91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.html" beforeDir="false" afterPath="$PROJECT_DIR$/out.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cucumber/Features/ShopCheckout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cucumber/Features/ShopCheckout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,9 +165,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
