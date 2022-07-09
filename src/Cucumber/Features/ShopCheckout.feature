@@ -17,3 +17,5 @@ Feature: Buying a product
     And I select pick up in-store delivery option
     And I choose payment option and finalize the order
     Then I capture a screenshot
+
+    #xpath do tabelek //th[text()="VCIUVCNVL"]/following-sibling::td[@class="text-xs-right"] - pozwala wybierac sasiadujace komorki

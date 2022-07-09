@@ -115,10 +115,10 @@ public class ShopCheckoutSteps {
 
     @Then("I capture a screenshot")
     public void iCaptureAScreenshot() {
+        //build relative project path
         String path = System.getProperty("user.dir")+"\\screenshots\\CheckoutScreenShot"+System.currentTimeMillis()+".png";
         //Take the screenshot
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
         //Copy the file to a location and use try catch block to handle exception
         try {
             FileUtils.copyFile(screenshot, new File(path));
