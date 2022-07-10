@@ -17,5 +17,6 @@ Feature: Buying a product
     And I select pick up in-store delivery option
     And I choose payment option and finalize the order
     Then I capture a screenshot
-
-    #xpath do tabelek //th[text()="VCIUVCNVL"]/following-sibling::td[@class="text-xs-right"] - pozwala wybierac sasiadujace komorki
+    And I go to order history page
+    And I check if my order has "Awaiting check payment" status
+    And I check if price is correct

@@ -18,12 +18,34 @@ import java.io.IOException;
 import java.time.Duration;
 
 public class ShopCheckoutSteps {
+
     private static String addressID;
+    private static String orderID;
+    private static String price;
     private WebDriver driver;
 
+    public static String getAddressID() {
+        return addressID;
+    }
 
-    public String accessAddressId() {
-        return this.addressID;
+    public static void setAddressID(String addressID) {
+        ShopCheckoutSteps.addressID = addressID;
+    }
+
+    public static String getOrderID() {
+        return orderID;
+    }
+
+    public static void setOrderID(String orderID) {
+        ShopCheckoutSteps.orderID = orderID;
+    }
+
+    public static String getPrice() {
+        return price;
+    }
+
+    public static void setPrice(String price) {
+        ShopCheckoutSteps.price = price;
     }
 
 
@@ -51,7 +73,7 @@ public class ShopCheckoutSteps {
     @And("I go back to main page")
     public void iGoBackToMainPage() {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
-        this.addressID = myAccountPage.getAddressId();
+        setAddressID(myAccountPage.getAddressId());
         myAccountPage.goToMainPageWithObject();
     }
 
@@ -116,7 +138,7 @@ public class ShopCheckoutSteps {
     @Then("I capture a screenshot")
     public void iCaptureAScreenshot() {
         //build relative project path
-        String path = System.getProperty("user.dir")+"\\screenshots\\CheckoutScreenShot"+System.currentTimeMillis()+".png";
+        String path = System.getProperty("user.dir") + "\\screenshots\\CheckoutScreenShot" + System.currentTimeMillis() + ".png";
         //Take the screenshot
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         //Copy the file to a location and use try catch block to handle exception
@@ -125,5 +147,31 @@ public class ShopCheckoutSteps {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        //and get order id string
+        OrderConfirmationPage orderConfirmationPage = new OrderConfirmationPage(driver);
+        setOrderID(orderConfirmationPage.getOrderId());
+        setPrice(orderConfirmationPage.getPrice());
+    }
+
+    @And("I go to order history page")
+    public void iGoToOrderHistoryPage() {
+        OrderConfirmationPage orderConfirmationPage = new OrderConfirmationPage(driver);
+        orderConfirmationPage.goToOrderHistory();
+    }
+
+    @And("I check if my order has {string} status")
+    public void iCheckIfMyOrderHasStatus(String status) {
+        OrderHistoryPage orderHistoryPage = new OrderHistoryPage(driver);
+        String statusFromOrderHistory = orderHistoryPage.getStatus();
+        Assert.assertEquals(status, statusFromOrderHistory);
+    }
+
+
+    @And("I check if price is correct")
+    public void iCheckIfPriceIsCorrect() {
+        OrderHistoryPage orderHistoryPage = new OrderHistoryPage(driver);
+        String priceFromOrderHistory = orderHistoryPage.getPriceFromCurrentOrder();
+        Assert.assertEquals(price, priceFromOrderHistory);
     }
 }

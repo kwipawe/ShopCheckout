@@ -2,13 +2,10 @@ package com.github.kwipawe.page;
 
 import com.github.kwipawe.steps.ShopCheckoutSteps;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
 import java.time.Duration;
 
 public class OrderPage {
@@ -19,7 +16,7 @@ public class OrderPage {
     }
 
     public void selectAddress() {
-        String addressId = new ShopCheckoutSteps().accessAddressId();
+        String addressId = new ShopCheckoutSteps().getAddressID();
         boolean radioCheck = driver.findElement(By.xpath("//input[@value=" + addressId + "]")).isSelected();
         if (radioCheck == false) {
 //        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='id-address-delivery-address-" + addressId + "']/header/label/span[1]/span")));

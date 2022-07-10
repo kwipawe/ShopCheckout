@@ -8,10 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e065f6a-08c1-44bf-8b67-4ff87afe5f10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657319236528.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657409574680.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657411273632.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657411378856.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657411791944.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657414950407.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657415045089.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657415186663.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenshots/CheckoutScreenShot1657415676333.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderConfirmationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderHistoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out.html" beforeDir="false" afterPath="$PROJECT_DIR$/out.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cucumber/Features/ShopCheckout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cucumber/Features/ShopCheckout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,9 +161,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/github/kwipawe/page/OrderPage.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/github/kwipawe/steps/ShopCheckoutSteps.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
