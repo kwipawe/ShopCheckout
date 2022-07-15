@@ -61,7 +61,7 @@ public class ShopCheckoutSteps {
     @When("I go to sign in page")
     public void iGoToSignInPage() {
         MainPage mainPage = new MainPage(driver);
-        mainPage.signInWithObject();
+        mainPage.signIn();
     }
 
     @And("I log in as an user using {string} and {string}")
@@ -74,13 +74,13 @@ public class ShopCheckoutSteps {
     public void iGoBackToMainPage() {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         setAddressID(myAccountPage.getAddressId());
-        myAccountPage.goToMainPageWithObject();
+        myAccountPage.goToMainPage();
     }
 
     @And("I go to Hummingbird Printed Sweater product page")
     public void iGoToSweaterProductPage() {
         MainPage mainPage = new MainPage(driver);
-        mainPage.goToProductPageWithObject();
+        mainPage.goToProductPage();
     }
 
 
@@ -106,7 +106,7 @@ public class ShopCheckoutSteps {
     @And("I go to checkout page")
     public void iGoToCheckoutPage() {
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
-        shoppingCartPage.proceedToCheckoutWithObject();
+        shoppingCartPage.proceedToCheckout();
     }
 
     @Then("I check if discount is right")
@@ -137,18 +137,15 @@ public class ShopCheckoutSteps {
 
     @Then("I capture a screenshot")
     public void iCaptureAScreenshot() {
-        //build relative project path
         String path = System.getProperty("user.dir") + "\\screenshots\\CheckoutScreenShot" + System.currentTimeMillis() + ".png";
-        //Take the screenshot
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        //Copy the file to a location and use try catch block to handle exception
         try {
             FileUtils.copyFile(screenshot, new File(path));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
-        //and get order id string
+        //and sets static vars id & price
         OrderConfirmationPage orderConfirmationPage = new OrderConfirmationPage(driver);
         setOrderID(orderConfirmationPage.getOrderId());
         setPrice(orderConfirmationPage.getPrice());
@@ -172,6 +169,6 @@ public class ShopCheckoutSteps {
     public void iCheckIfPriceIsCorrect() {
         OrderHistoryPage orderHistoryPage = new OrderHistoryPage(driver);
         String priceFromOrderHistory = orderHistoryPage.getPriceFromCurrentOrder();
-        Assert.assertEquals(price, priceFromOrderHistory);
+        Assert.assertEquals(getPrice(), priceFromOrderHistory);
     }
 }

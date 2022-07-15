@@ -12,12 +12,14 @@ public class OrderConfirmationPage {
     }
 
     public String getOrderId() {
+        // gets order confirmation id to compare with order history id
         String OrderId = driver.findElement(By.xpath("//*[text()[contains(.,'Order reference')]]")).getText();
         OrderId = OrderId.replaceAll("Order reference: ", "");
         return OrderId;
     }
 
     public String getPrice() {
+        // gets order confirmation price to compare with order history price
         String price = driver.findElement(By.xpath("//td/span[text()='Total']/parent::td/following-sibling::td")).getText();
         price = price.replace("€", "");
         return price;

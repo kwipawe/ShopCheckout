@@ -1,8 +1,6 @@
 package com.github.kwipawe.page;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,6 +27,7 @@ public class ProductPage {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.id("quantity_wanted")));
         quantityBox.click();
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.id("quantity_wanted")));
+        // to override default js(?) value
         while (!quantityBox.getAttribute("value").equals(quantity)) {
             quantityBox.clear();
             quantityBox.sendKeys(Keys.SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
@@ -36,11 +35,9 @@ public class ProductPage {
             quantityBox.sendKeys(Keys.DELETE);
             quantityBox.sendKeys(quantity);
         }
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.id("quantity_wanted")));
-//        quantityBox.sendKeys(quantity);
     }
 
-    public ShoppingCartPage addToCartAndProceed() {
+    public void addToCartAndProceed() {
         try {
             driver.findElement(By.cssSelector(".btn.btn-primary.add-to-cart")).click();
         } catch (org.openqa.selenium.StaleElementReferenceException ex) {
@@ -48,6 +45,5 @@ public class ProductPage {
         }
         driver.get("https://mystore-testlab.coderslab.pl/index.php?controller=cart&action=show");
         driver.navigate().refresh();
-        return new ShoppingCartPage(driver);
     }
 }

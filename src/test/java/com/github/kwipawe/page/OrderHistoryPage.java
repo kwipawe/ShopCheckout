@@ -18,8 +18,8 @@ public class OrderHistoryPage {
     }
 
     public String getStatus() {
-        String status = driver.findElement(By.xpath("//th[text()='" + ShopCheckoutSteps.getOrderID() + "']/following-sibling::td/span")).getText();
-        return status;
+        // to check with default status text
+        return driver.findElement(By.xpath("//th[text()='" + ShopCheckoutSteps.getOrderID() + "']/following-sibling::td/span")).getText();
     }
 }
 

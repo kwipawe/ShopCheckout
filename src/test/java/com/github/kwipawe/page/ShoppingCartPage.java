@@ -13,9 +13,4 @@ public class ShoppingCartPage {
     public void proceedToCheckout() {
         driver.findElement(By.xpath("//a[text()='Proceed to checkout']")).click();
     }
-
-    public OrderPage proceedToCheckoutWithObject() {
-        proceedToCheckout();
-        return new OrderPage(driver);
-    }
 }
